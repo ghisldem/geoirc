@@ -1,0 +1,26 @@
+<!-- exemple d'utilisation de directives
+<h2 changecouleur macouleur = "yellow" (result)="truc($event)" >Carte</h2>
+<h2 changecouleur [macouleur] = "couleur" (result)="truc($event)" >Carte 2 </h2>
+-->
+
+
+<input type = "text" [(ngModel)]="name">
+<button (click) = "unClick()">Clique moi</button>
+
+
+
+<!--
+   leaflet est une directive pour afficher la carte
+   on demande avec (leafletMapReady)="setMap($event)"
+   de récupérer la référence sur l'objet Map 
+-->
+<!-- ajout carte -->
+<div 
+style="height: 100%;" 
+leaflet 
+[leafletOptions]="options"  
+[leafletCenter]="center"
+(leafletMapReady) = "setMap($event)"
+
+></div>
+
